@@ -1,0 +1,16 @@
+#!/bin/bash
+if [ -e ~/.Xresources ]
+then
+	xrdb -merge ~/.Xresources
+fi &
+
+if [ -x ~/.dwmautorun ]
+then
+	~/.dwmautorun
+fi &
+
+while true; do
+	xsetroot -name "$(date)"
+	sleep 1
+done &
+dwm | exit

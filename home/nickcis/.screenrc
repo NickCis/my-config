@@ -1,0 +1,22 @@
+maptimeout 5
+term xterm-color
+hardstatus alwayslastline "%w"
+
+#bindkey -k k2 next
+#bindkey -k k1 prev
+
+# for shift UP and DOWN arrows
+bindkey ^[[1;2A title
+bindkey ^[[1;2B screen
+
+# for ctrl right and left arrows
+bindkey ^[[1;5D prev
+bindkey ^[[1;5C next
+
+# for shift right and left arrows
+bindkey ^[[1;2D prev
+bindkey ^[[1;2C next
+
+
+altscreen on
+vbell off
