@@ -1,6 +1,6 @@
 maptimeout 5
 term xterm-color
-hardstatus alwayslastline "%w"
+hardstatus alwayslastline "%{= g} %{= w}%-Lw%{=r}%n%f* %t%{-}%+LW"
 
 #bindkey -k k2 next
 #bindkey -k k1 prev
@@ -17,6 +17,9 @@ bindkey ^[[1;5C next
 bindkey ^[[1;2D prev
 bindkey ^[[1;2C next
 
-
 altscreen on
 vbell off
+
+escape ^``
+
+termcapinfo xterm* ti@:te@
