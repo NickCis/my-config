@@ -8,10 +8,14 @@ hardstatus alwayslastline "%{= g} %{= w}%-Lw%{=r}%n%f* %t%{-}%+LW"
 # for shift UP and DOWN arrows
 bindkey ^[[1;2A title
 bindkey ^[[1;2B screen
+bindkey ß title
+bindkey ħ screen
 
 # for ctrl right and left arrows
 bindkey ^[[1;5D prev
 bindkey ^[[1;5C next
+bindkey « prev
+bindkey → next
 
 # for shift right and left arrows
 bindkey ^[[1;2D prev
