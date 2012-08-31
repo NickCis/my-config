@@ -36,3 +36,5 @@ UXTerm*scrollTtyOutput: false
 		Ctrl Shift <Key>j: string("ħ") \n\
 		Ctrl Shift <Key>k: string("ß") \n\
 		Ctrl Shift <Key>l: string("→")
+
+UXTerm*charClass: 0-32:1,33-126:2,127-160:3,161-255:2
