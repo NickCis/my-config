@@ -268,7 +268,7 @@
 	[ConfigureRequest] = configurerequest,
 	[ConfigureNotify] = configurenotify,
 	[DestroyNotify] = destroynotify,
-	//[EnterNotify] = enternotify,
+	[EnterNotify] = enternotify,
 	[Expose] = expose,
 	[FocusIn] = focusin,
 	[KeyPress] = keypress,
@@ -1021,13 +1021,13 @@ grabbuttons(Client *c, Bool focused) {
 						XGrabButton(dpy, buttons[i].button,
 						            buttons[i].mask | modifiers[j],
 						            c->win, False, BUTTONMASK,
-						            //GrabModeAsync, GrabModeSync, None, None);
-						            GrabModeSync, GrabModeSync, None, None);
+						            GrabModeAsync, GrabModeSync, None, None);
+						            //GrabModeSync, GrabModeSync, None, None);
 		}
 		else
 			XGrabButton(dpy, AnyButton, AnyModifier, c->win, False,
-			            //BUTTONMASK, GrabModeAsync, GrabModeSync, None, None);
-			            BUTTONMASK, GrabModeSync, GrabModeSync, None, None);
+			            BUTTONMASK, GrabModeAsync, GrabModeSync, None, None);
+			            //BUTTONMASK, GrabModeSync, GrabModeSync, None, None);
 	}
 }
 

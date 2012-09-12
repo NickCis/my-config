@@ -22,6 +22,7 @@ static const Rule rules[] = {
 	{ NULL,  "Navigator",       NULL,       0,       False,       -1 },
 	{ "Firefox",  NULL,       "Firefox Preferences",       0,       True,       -1 },
 	{ NULL,  "Download",       NULL,       0,       True,       -1 },
+	{ "Qjackctl",  NULL,       NULL,       0,       True,       -1 },
 
 };
 

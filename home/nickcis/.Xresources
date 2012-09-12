@@ -35,4 +35,6 @@ UXTerm*scrollTtyOutput: false
 		Ctrl Shift <Key>h: string("«") \n\
 		Ctrl Shift <Key>j: string("ħ") \n\
 		Ctrl Shift <Key>k: string("ß") \n\
-		Ctrl Shift <Key>l: string("→")
+		Ctrl Shift <Key>l: string("→") \n\
+		Shift Ctrl <Key>v: insert-selection(CLIPBOARD) \n\
+		Shift Ctrl <Key>c: select-end(CLIPBOARD, CUT_BUFFER1)
