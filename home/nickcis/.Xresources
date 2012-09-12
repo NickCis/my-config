@@ -25,6 +25,7 @@ UXTerm*cursorColor: white
 UXTerm.vt100.geometry: 79x25
 UXTerm*scrollBar: false
 UXTerm*scrollTtyOutput: false
+UXTerm*charClass: 0-32:1,33-126:2,127-160:3,161-255:2
 
 *ttyModes:         erase ^?
 *VT100.Translations: \
