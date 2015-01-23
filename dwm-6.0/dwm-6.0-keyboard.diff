@@ -1,0 +1,98 @@
+--- dwm.c	2012-11-08 10:30:45.320231469 -0300
++++ dwm.c.keyboard	2012-11-08 10:34:17.397783449 -0300
+@@ -39,6 +39,7 @@
+ #ifdef XINERAMA
+ #include <X11/extensions/Xinerama.h>
+ #endif /* XINERAMA */
++#include <X11/XKBlib.h>
+ 
+ /* macros */
+ #define BUTTONMASK              (ButtonPressMask|ButtonReleaseMask)
+@@ -95,6 +96,7 @@
+ 	Client *snext;
+ 	Monitor *mon;
+ 	Window win;
++	XkbDescPtr kbdesc;
+ };
+ 
+ typedef struct {
+@@ -456,6 +458,7 @@
+ 	}
+ 	else if((c = wintoclient(ev->window))) {
+ 		focus(c);
++		XAllowEvents(dpy, ReplayPointer, CurrentTime);
+ 		click = ClkClientWin;
+ 	}
+ 	for(i = 0; i < LENGTH(buttons); i++)
+@@ -755,6 +758,18 @@
+ 		dc.x = x;
+ 		if(m->sel) {
+ 			col = m == selmon ? dc.sel : dc.norm;
++//			XkbDescPtr keyboard = XkbGetKeyboard(dpy, XkbAllComponentsMask, XkbUseCoreKbd);
++//			char *layout, *symbols = XGetAtomName(dpy, keyboard->names->symbols);
++//			layout = symbols+3;
++//			while(*(layout++) != 0) {
++//				if(*layout == '_') {
++//					*layout = 0;
++//					break;
++//				}
++//			}
++//			
++//			//XkbFreeClientMap(keyboard, XkbAllComponentsMask, 1);
++//			drawtext(symbols+3, col, False);
+ 			drawtext(m->sel->name, col, False);
+ 			drawsquare(m->sel->isfixed, m->sel->isfloating, False, col);
+ 		}
+@@ -856,6 +871,11 @@
+ 		attachstack(c);
+ 		grabbuttons(c, True);
+ 		XSetWindowBorder(dpy, c->win, dc.sel[ColBorder]);
++		if(c->kbdesc){
++			XkbSetMap(dpy, XkbAllMapComponentsMask, c->kbdesc);
++			//XkbFreeClientMap(c->kbdesc, XkbAllMapComponentsMask, 1);
++			//c->kbdesc = NULL;
++		}
+ 		setfocus(c);
+ 	}
+ 	else
+@@ -1002,10 +1022,12 @@
+ 						            buttons[i].mask | modifiers[j],
+ 						            c->win, False, BUTTONMASK,
+ 						            GrabModeAsync, GrabModeSync, None, None);
++						            //GrabModeSync, GrabModeSync, None, None);
+ 		}
+ 		else
+ 			XGrabButton(dpy, AnyButton, AnyModifier, c->win, False,
+ 			            BUTTONMASK, GrabModeAsync, GrabModeSync, None, None);
++			            //BUTTONMASK, GrabModeSync, GrabModeSync, None, None);
+ 	}
+ }
+ 
+@@ -1165,6 +1187,8 @@
+ 	arrange(c->mon);
+ 	XMapWindow(dpy, c->win);
+ 	focus(NULL);
++	//c->kbdesc = NULL;
++	XkbFreeClientMap(c->kbdesc, XkbAllMapComponentsMask, 1);
+ }
+ 
+ void
+@@ -1779,6 +1803,9 @@
+ 	XSetWindowBorder(dpy, c->win, dc.norm[ColBorder]);
+ 	if(setfocus)
+ 		XSetInputFocus(dpy, root, RevertToPointerRoot, CurrentTime);
++	if(c->kbdesc)
++		XkbFreeClientMap(c->kbdesc, XkbAllMapComponentsMask, 1);
++	c->kbdesc = XkbGetMap(dpy, XkbAllMapComponentsMask, XkbUseCoreKbd);
+ }
+ 
+ void
+@@ -1800,6 +1827,8 @@
+ 		XSetErrorHandler(xerror);
+ 		XUngrabServer(dpy);
+ 	}
++	if(c->kbdesc)
++		XkbFreeClientMap(c->kbdesc, XkbAllMapComponentsMask, 1);
+ 	free(c);
+ 	focus(NULL);
+ 	arrange(m);
