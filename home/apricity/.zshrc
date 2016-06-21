@@ -21,6 +21,10 @@ fi
 alias ll='ls -l'
 alias la='ls -a'
 
+docker-ip() {
+  docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@"
+}
+
 # Copy bash behaviour of ESC-backspace
 bindkey "^[^?" vi-backward-kill-word
 
