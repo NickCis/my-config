@@ -65,3 +65,7 @@ map 00 :tabl<cr>
 nnoremap Y v$hy
 
 filetype plugin indent on
+
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype json setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype perl setlocal noexpandtab
