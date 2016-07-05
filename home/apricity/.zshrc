@@ -3,9 +3,6 @@ HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/alex/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -22,7 +19,7 @@ alias ll='ls -l'
 alias la='ls -a'
 
 docker-ip() {
-  docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@"
+  sudo docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@"
 }
 
 # Copy bash behaviour of ESC-backspace
