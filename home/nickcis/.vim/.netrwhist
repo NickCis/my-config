@@ -1,8 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/nickcis/repos/fit-syncer'
-let g:netrw_dirhist_2='/home/nickcis/repos/unary-union/src'
-let g:netrw_dirhist_3='/home/nickcis/repos/polygonize/src'
-let g:netrw_dirhist_4='/home/nickcis/repos/fit-syncer-test/node_modules/babel-cli/lib'
-let g:netrw_dirhist_5='/home/nickcis/repos/e-mobiliaria/src/common/containers'
-let g:netrw_dirhist_6='/home/nickcis/repos/radioactive-bird/images'
+let g:netrw_dirhist_cnt =0

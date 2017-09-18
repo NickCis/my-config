@@ -39,7 +39,7 @@ set hlsearch
 map tn :tabn<CR>
 map tp :tabp<CR>
 map tm :tabm
-map tt :tabnew 
+map tt :tabnew
 map t1 :tabn1<cr>
 map 11 :tabn1<cr>
 map t2 :tabn2<cr>
@@ -65,7 +65,3 @@ map 00 :tabl<cr>
 nnoremap Y v$hy
 
 filetype plugin indent on
-
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
-autocmd Filetype json setlocal ts=2 sts=2 sw=2 expandtab
-autocmd Filetype perl setlocal noexpandtab

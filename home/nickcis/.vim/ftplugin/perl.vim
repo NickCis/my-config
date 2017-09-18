@@ -1,0 +1,3 @@
+setlocal noexpandtab
+setlocal autoindent
+setlocal smarttab
