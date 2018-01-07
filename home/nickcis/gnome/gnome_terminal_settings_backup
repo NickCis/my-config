@@ -1,0 +1,9 @@
+[legacy/keybindings]
+prev-tab='<Primary><Shift>h'
+next-tab='<Primary><Shift>l'
+new-tab='<Primary><Shift>j'
+
+[legacy]
+schema-version=uint32 3
+theme-variant='dark'
+default-show-menubar=false
