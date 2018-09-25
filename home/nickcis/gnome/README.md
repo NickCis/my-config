@@ -46,3 +46,10 @@ dconf load /org/gnome/shell/ < gnome_shell_settings_backup
 ```bash
 dconf dump /org/gnome/shell/ > gnome_shell_settings_backup
 ```
+
+### Extensions
+
+```bash
+yay -Sy gnome-shell-extension-caffeine-git
+yay -Sy gnome-shell-extension-dash-to-dock
+```
