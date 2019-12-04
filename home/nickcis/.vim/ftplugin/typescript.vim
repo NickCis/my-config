@@ -1,6 +1,7 @@
 setlocal ts=2 sts=2 sw=2 expandtab
 
 let g:syntastic_typescript_checkers = ['eslint']
+let g:syntastic_filetype_map = { "typescriptreact": "typescript" }
 
 " --- syntactic - local estlint --- https://github.com/mtscout6/syntastic-local-eslint.vim
 " return full path with the trailing slash
