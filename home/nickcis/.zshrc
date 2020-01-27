@@ -35,3 +35,4 @@ bindkey "^[^?" vi-backward-kill-word
 
 export GOPATH=~/.go
 export PATH=$PATH:~/.go/bin
+source /usr/share/nvm/init-nvm.sh
