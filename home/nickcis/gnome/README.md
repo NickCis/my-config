@@ -34,6 +34,8 @@ makepkg -s -i
 # Install extensions: TODO
 ```
 
+Note: for icons use [`dvorapa/apricity-icons`](https://github.com/dvorapa/apricity-icons)
+
 ### Configuration
 
 ```bash
