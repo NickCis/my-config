@@ -8,7 +8,14 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-source /usr/share/zsh/site-contrib/powerline.zsh
+if [[ -f /usr/share/zsh/site-contrib/powerline.zsh ]]; then
+    source /usr/share/zsh/site-contrib/powerline.zsh
+fi
+
+if [[ -f /usr/share/powerline/bindings/zsh/powerline.zsh ]]; then
+  source /usr/share/powerline/bindings/zsh/powerline.zsh
+fi
+
 
 export EDITOR=`which vim`
 
@@ -35,4 +42,7 @@ bindkey "^[^?" vi-backward-kill-word
 
 export GOPATH=~/.go
 export PATH=$PATH:~/.go/bin
-source /usr/share/nvm/init-nvm.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
