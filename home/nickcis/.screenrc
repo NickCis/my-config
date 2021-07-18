@@ -1,0 +1,3 @@
+term screen-256color
+escape ^^^
+termcapinfo xterm* ti@:te@
