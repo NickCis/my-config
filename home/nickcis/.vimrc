@@ -83,3 +83,5 @@ autocmd Filetype perl setlocal noexpandtab
 let g:ale_open_list = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
+
+command Blame exec "!cd `dirname %` && git blame `basename %`"
