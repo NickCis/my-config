@@ -48,3 +48,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export LS_COLORS=$LS_COLORS:'di=0;94:'
+
+alias notification-complete='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'
