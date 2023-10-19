@@ -3,10 +3,7 @@
 ```
 # pacman -Sy community/vim-syntastic
 pacman -Sy community/vim-ale
+yay -Sy aur/vim-sonokai-git
 ```
 
 Copy this folder and `.vimrc` to home.
-
-## Vim + powerline
-
-2. `/usr/share/zsh/site-contrib/site-contrib/powerline.zsh` file is taken from Arch Linux config

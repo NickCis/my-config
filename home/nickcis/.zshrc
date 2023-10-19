@@ -1,3 +1,6 @@
+powerline-daemon -q
+source /usr/share/powerline/bindings/zsh/powerline.zsh
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=10000
@@ -7,15 +10,6 @@ bindkey -e
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-
-if [[ -f /usr/share/zsh/site-contrib/powerline.zsh ]]; then
-    source /usr/share/zsh/site-contrib/powerline.zsh
-fi
-
-if [[ -f /usr/share/powerline/bindings/zsh/powerline.zsh ]]; then
-  source /usr/share/powerline/bindings/zsh/powerline.zsh
-fi
-
 
 export EDITOR=`which vim`
 
@@ -42,11 +36,14 @@ bindkey "^[^?" vi-backward-kill-word
 
 export GOPATH=~/.go
 export PATH=$PATH:~/.go/bin
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 export LS_COLORS=$LS_COLORS:'di=0;94:'
 
 alias notification-complete='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'
+
+if [ -f /usr/share/nvm/init-nvm.sh ]; then
+    source /usr/share/nvm/init-nvm.sh
+else
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
