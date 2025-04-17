@@ -85,4 +85,4 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 
 command Blame exec "!cd `dirname %` && git blame `basename %`"
-command JSONPretty exec '%!python -m json.tool'
+command JSONPretty exec '%!python -m json.tool --indent 2'
